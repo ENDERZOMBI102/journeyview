@@ -1,0 +1,23 @@
+[versions]
+    slf4j = '2.0.12'
+    log4j = '2.23.1'
+    jansi = '2.4.1'
+    pngj  = '2.1.0'
+    picli = '4.7.5'
+    torfx = '1.7.20'
+    krefl = '1.9.23'
+
+[libraries]
+    jansi  = { module = 'org.fusesource.jansi:jansi', version.ref = 'jansi' }
+    slf4j  = { module = 'org.slf4j:slf4j-api', version.ref = 'slf4j' }
+    log4j  = { module = 'org.apache.logging.log4j:log4j-slf4j2-impl', version.ref = 'log4j' }
+    pngj   = { module = 'ar.com.hjg:pngj', version.ref = 'pngj' }
+    piccli = { module = 'info.picocli:picocli', version.ref = 'picli' }
+    tornfx = { module = 'no.tornado:tornadofx', version.ref = 'torfx' }
+    stdlib = { module = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8' }
+    krefle = { module = 'org.jetbrains.kotlin:kotlin-reflect', version.ref = 'krefl' }
+
+[bundles]
+    impl    = [ 'slf4j', 'pngj', 'stdlib', 'krefle', 'piccli', 'tornfx', 'jansi' ]
+    runtime = [ 'log4j' ]
+    shade   = [ 'slf4j', 'log4j', 'jansi', 'stdlib', 'krefle', 'piccli', 'tornfx' ]
